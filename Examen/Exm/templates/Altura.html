@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+{% block principalcontent%}
+<div id="accordion" role="tablist" aria-multiselectable="true">
+  <br>
+<div class="card">
+  <h5 class="card-header" role="tab" id="headingOne">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="d-block">
+          <i class="fa fa-chevron-down pull-right"></i> Frecuencia Relativa y Absoluta de la Altura
+      </a>
+  </h5>
+  <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+      <div class="card-body">
+        <img src="data:image/png;base64,{{ data }}" alt="" height="400", widht="400">
+        <img src="data:image/png;base64,{{ data1 }}" alt="" height="400", widht="400">
+        <img src="data:image/png;base64,{{ data2 }}" alt="" height="400", widht="400">
+      </div>
+  </div>
+</div>
+
+
+<div class="card">
+  <h5 class="card-header" role="tab" id="headingTwo">
+      <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <i class="fa fa-chevron-down pull-right"></i> Medias,Medianas y Modas
+      </a>
+  </h5>
+  <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="card-body">
+        <img src="data:image/png;base64,{{ GrafMMM }}" alt="" height="400", widht="400">
+        <p>Media: {{Media}}</p>
+        <p>Mediana: {{Mediana}}</p>
+        <p>Moda: {{Moda}}</p>
+      </div>
+  </div>
+</div>
+
+<div class="card">
+  <h5 class="card-header" role="tab" id="headingThree">
+      <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <i class="fa fa-chevron-down pull-right"></i> Tabla de datos
+      </a>
+  </h5>
+  <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="card-body">
+        <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Altura</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Velocidad</th>
+            <th scope="col">Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for dato in datos %}
+          <tr>
+            <td>{{dato.Altura}}</td>
+            <td>{{dato.Peso}}</td>
+            <td>{{dato.Velocidad}}</td>
+            <td>{{dato.Color}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+</div>
+{% endblock principalcontent%}
+
